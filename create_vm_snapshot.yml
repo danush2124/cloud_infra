@@ -13,5 +13,6 @@
        name: "{{ guest_name }}"
        state: present
        snapshot_name: "{{ snapshot_name }}"
+       validate_certs: False
        description: "{{ snapshot_description | default('VMware VM snapshot') }}"
 
