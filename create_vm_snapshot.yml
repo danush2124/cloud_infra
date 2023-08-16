@@ -12,6 +12,6 @@
        folder: "/{{ datacenter_name }}/vm/"
        name: "{{ guest_name }}"
        state: present
-       snapshot_name: {{ snapshot_name }}
-       description: {{ snapshot_description | default('VMware VM snapshot')
+       snapshot_name: "{{ snapshot_name }}"
+       description: "{{ snapshot_description | default('VMware VM snapshot') }}"
 
