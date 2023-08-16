@@ -12,6 +12,6 @@
         folder: "/{{ datacenter_name }}/vm/"
         name: "{{ guest_name }}"
         state: absent
-        snapshot_name: {{ snapshot_name }}
+        snapshot_name: "{{ snapshot_name }}"
         validate_certs: False
      delegate_to: localhost
