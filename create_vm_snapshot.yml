@@ -14,4 +14,4 @@
        state: present
        snapshot_name: {{ snapshot_name }}
        description: {{ snapshot_description | default('VMware VM snapshot')
-     delegate_to: localhost
+
