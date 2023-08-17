@@ -7,7 +7,7 @@
        state: absent
      register: output
      with_items: {{ command_list }}
-   - name: Change vCenter root password
+   - name: Restart Service
      command: "service-control --start --all"
      become: yes
      register: output
