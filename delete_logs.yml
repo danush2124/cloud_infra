@@ -2,11 +2,9 @@
 - hosts: all
   tasks:
    - name: delete log files
-     file:
-       path: "{{ item }}"
-       state: absent
+     shell: "{{ item }}"
      register: output
-     with_items: {{ command_list }}
+     with_items: "{{ command_list }}"
    - name: Restart Service
      command: "service-control --start --all"
      become: yes
