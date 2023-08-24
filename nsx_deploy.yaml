@@ -1,0 +1,37 @@
+---
+#
+# Playbook to deploy the first NSX Appliance node. Also checks the node
+# status
+#
+- hosts: all
+  collections:
+   - damhau.ansible_for_nsxt
+   
+  tasks:
+    - name: deploy NSX Manager OVA
+      nsxt_deploy_ova:
+        ovftool_path: /home/cloud_infra/ovftool/vmware-ovftool
+        datacenter: "{{ datacenter}}"
+        datastore: "{{ datastore }}"
+        portgroup: "{{ portgroup }}"
+        cluster: "{{ cluster }}"
+        vmname: "{{ nsx_node_name }}"
+        hostname: "{{ nsx_node_name }}"
+        dns_server: "{{ dns_server }}"
+        dns_domain: ""
+        ntp_server: ""
+        ssh_enabled: True
+        allow_ssh_root_login: True        
+        gateway: "{{ gateway }}"
+        ip_address: "{{ mgmt_ip }}"
+        netmask: "{{ netmask }}"
+        admin_password: "{{ nsx_password }}"
+        cli_password: "{{ nsx_password }}"
+        path_to_ova: "{{ nsx_ova_path }}"
+        ova_file: "{{ nsx_ova }}"
+        vcenter: "{{ vcenter_mgmt_ip }}"
+        vcenter_user: "{{ vcenter_username }}"
+        vcenter_passwd: "{{ vcenter_password }}"
+        deployment_size: "{{ deployment_size }}"
+        role: "NSX Manager"
+
