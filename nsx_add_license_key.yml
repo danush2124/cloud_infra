@@ -1,0 +1,12 @@
+---
+- hosts: all
+  collections:
+   - damhau.ansible_for_nsxt  
+  gather_facts: no
+  tasks:
+    - name: Set NSX-T Manager License Key
+      damhau.ansible_for_nsxt.nsxt_licenses:
+        nsx_manager_hostname: "{{ nsx_manager_hostname }}"
+        nsx_manager_username: "{{ nsx_manager_username }}"
+        nsx_manager_password: "{{ nsx_manager_password }}"
+        license_key: "{{ license_key }}"
