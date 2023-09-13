@@ -1,3 +1,4 @@
 ---
 collections:
  - name: community.vmware
+ - name: damhau.ansible_for_nsxt
